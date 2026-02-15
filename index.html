@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heng Zhang | Postdoctoral Researcher</title>
+    <title>Chen Liao | Chemistry Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -402,12 +402,21 @@
             border: 3px solid var(--color-border);
             overflow: hidden;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .hero-initials {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-accent);
         }
 
         .hero-text h1 {
@@ -433,6 +442,18 @@
         }
 
         .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.5rem 1rem;
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        .hero-links span {
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -918,6 +939,11 @@
             font-weight: 500;
         }
 
+        .contact-socials span {
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
         @media (max-width: 768px) {
             .hero {
                 padding-top: 100px;
@@ -1024,14 +1050,14 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="nav-logo">Heng Zhang</a>
+            <a href="#" class="nav-logo">Chen Liao</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#experience">Career</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#funding">Funding</a></li>
+                <li><a href="#funding">Awards</a></li>
                 <li><a href="#more">More</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1045,9 +1071,9 @@
             <a href="#about" onclick="toggleMenu()">About</a>
             <a href="#research" onclick="toggleMenu()">Research</a>
             <a href="#publications" onclick="toggleMenu()">Publications</a>
-            <a href="#experience" onclick="toggleMenu()">Career</a>
+            <a href="#experience" onclick="toggleMenu()">Experience</a>
             <a href="#education" onclick="toggleMenu()">Education</a>
-            <a href="#funding" onclick="toggleMenu()">Funding</a>
+            <a href="#funding" onclick="toggleMenu()">Awards</a>
             <a href="#more" onclick="toggleMenu()">More</a>
             <a href="#contact" onclick="toggleMenu()">Contact</a>
         </div>
@@ -1058,45 +1084,20 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-image">
-                    <img src="profile_photo.jpeg" alt="Heng Zhang">
+                    <img src="profile_photo.jpeg" alt="Chen Liao">
                 </div>
                 <div class="hero-text">
-                    <h1>Heng Zhang</h1>
-                    <p class="hero-title">Postdoctoral Researcher at IRCN, University of Tokyo</p>
+                    <h1>Chen Liao</h1>
+                    <p class="hero-title">Ph.D. Student in Coordination Chemistry, Kyushu University</p>
                     <p class="hero-tagline">
-                        Developing bio-inspired AI systems for computer vision and NLP through predictive processing and
-                        self-organization principles.
+                        Researching molecular catalysis for CO2 reduction with DFT calculations, electrochemistry, and
+                        catalyst design for selective formate production.
                     </p>
                     <div class="hero-links">
-                        <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
-                            target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 24c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm5.25-8.8-5.25 7.2-5.25-7.2L12 0l5.25 5.2z" />
-                            </svg>
-                            Google Scholar
-                        </a>
-                        <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/Roger2148" target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                            GitHub
-                        </a>
-                        <a href="https://ircn.jp/en/" target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                            </svg>
-                            IRCN
-                        </a>
+                        <span>Email: ccliaochen [at] gmail.com</span>
+                        <a href="https://scholar.google.com/citations?hl=en&user=lQei3DMAAAAJ" target="_blank">Google Scholar</a>
+                        <a href="https://www.linkedin.com/in/chen-liao-b572a6339/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/cc-622" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -1128,35 +1129,25 @@
             <div class="section-content about-content">
                 <div class="about-text">
                     <p>
-                        I am a postdoctoral researcher at the International Research Center for Neurointelligence
-                        (IRCN), University of Tokyo, in collaboration with KTH Royal Institute of Technology. My
-                        research develops bio-inspired AI systems for computer vision and natural language processing by
-                        drawing on principles of predictive processing and self-organization observed in biological
-                        systems.
+                        I am a Ph.D. student in Coordination Chemistry at Kyushu University. I previously completed an
+                        MSc in Chemistry at the University of Manchester with Distinction.
                     </p>
                     <p>
-                        I focus on creating adaptive and robust learning frameworks that excel in dynamic, uncertain
-                        environments. My work spans unsupervised learning, dynamical systems, neural representations,
-                        and sequence learning. Through computational modeling of brain functions—particularly prediction
-                        and complex sequence processing—I aim to develop artificial intelligence that reflects the
-                        efficiency and resilience of biological cognition.
+                        My work focuses on molecular catalysis for CO2 reduction, combining mechanistic DFT studies and
+                        electrochemical experiments to design Ni-NHC systems with improved selectivity and practical
+                        solubility.
                     </p>
                 </div>
                 <div class="skills-container">
                     <h3>Specialties</h3>
                     <div class="skills">
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Reservoir Computing</span>
-                        <span class="skill-tag">Self-Organization</span>
-                        <span class="skill-tag">Dynamical Systems</span>
-                        <span class="skill-tag">Unsupervised Learning</span>
-                        <span class="skill-tag">Robustness</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">Molecular Catalysis</span>
+                        <span class="skill-tag">CO2 Reduction</span>
+                        <span class="skill-tag">DFT Calculations</span>
+                        <span class="skill-tag">Electrochemistry</span>
+                        <span class="skill-tag">Organic Synthesis</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Inorganic Chemistry</span>
                     </div>
                 </div>
             </div>
@@ -1169,106 +1160,22 @@
             <span class="section-label">Research</span>
             <h2>Research Interests</h2>
             <div class="projects-grid">
-                <div class="project-card" data-expanded="false">
-                    <div class="project-image">
-                        <img src="slide/SODE.png" alt="Self-Organizing Dynamical Equations">
-                    </div>
+                <div class="project-card">
                     <div class="project-content">
-                        <h3>Self-Organizing Dynamical Equations (SODE)</h3>
-                        <p class="project-meta" style="display: none;">3 Publications, 2 Submissions, 1 Draft</p>
-                        <p class="project-short">Bio-inspired systems for complex sequential learning using
-                            self-organization and nonlinear dynamics. Enables adaptive learning without backpropagation.
-                            <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a>
-                        </p>
-                        <div class="project-full" style="display: none;">
-                            <p>Bio-inspired systems leveraging self-organization and nonlinear dynamical principles for
-                                complex sequential learning. Employs attractor-repeller dynamics driven by Hebbian and
-                                anti-Hebbian rules, enabling robust chunking and adaptive learning without objective
-                                functions or back-propagation.</p>
-                            <p class="project-meta-full">3 Publications, 2 Submissions, 1 Draft</p>
-                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
-                        </div>
+                        <h3>Ni-NHC Catalysis for Selective Formate Production</h3>
+                        <p class="project-short">Mechanistic and design studies on Ni-NHC complexes to improve CO2-to-formate selectivity.</p>
                     </div>
                 </div>
-                <div class="project-card" data-expanded="false">
-                    <div class="project-image">
-                        <img src="slide/Robust Bio-inspired Vision Systems.png"
-                            alt="Robust Bio-inspired Vision Systems">
-                    </div>
+                <div class="project-card">
                     <div class="project-content">
-                        <h3>Robust Bio-inspired Vision Systems</h3>
-                        <p class="project-meta" style="display: none;">2 Submissions</p>
-                        <p class="project-short">Unsupervised image segmentation systems that maintain performance under
-                            severe noise and corruption, mimicking human visual perception. <a href="#"
-                                class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
-                        <div class="project-full" style="display: none;">
-                            <p>Extending SODE with random network-based feature generation for spatial segmentation.
-                                Achieves remarkable robustness in unsupervised image segmentation under severe noise and
-                                corruption, mimicking human vision and Gestalt principles.</p>
-                            <p class="project-meta-full">2 Submissions</p>
-                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
-                        </div>
+                        <h3>Redox Tuning Through Ion Pairing</h3>
+                        <p class="project-short">Investigating ion-pair effects to control catalytic pathways in electrocatalytic CO2 reduction.</p>
                     </div>
                 </div>
-                <div class="project-card" data-expanded="false">
-                    <div class="project-image">
-                        <img src="slide/Xenovert.png" alt="Xenovert Adaptation">
-                    </div>
+                <div class="project-card">
                     <div class="project-content">
-                        <h3>Xenovert: Adaptive Distribution Shift</h3>
-                        <p class="project-meta" style="display: none;">1 Submission, 1 Draft</p>
-                        <p class="project-short">Biologically-inspired algorithm for real-time adaptation to
-                            distribution
-                            shifts using tree-based mapping structures. <a href="#" class="read-more"
-                                onclick="toggleProject(event, this)">Read more</a></p>
-                        <div class="project-full" style="display: none;">
-                            <p>An adaptive algorithm inspired by biological flexibility for online distribution shift
-                                adjustment. Uses a perfect binary tree to map source distributions to shifted targets
-                                while
-                                preserving relationships with downstream operations.</p>
-                            <p class="project-meta-full">1 Submission, 1 Draft</p>
-                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-expanded="false">
-                    <div class="project-image">
-                        <img src="slide/Advancing Reservoir Computing.png" alt="Reservoir Computing">
-                    </div>
-                    <div class="project-content">
-                        <h3>Advancing Reservoir Computing</h3>
-                        <p class="project-meta" style="display: none;">2 Publications, 2 Drafts</p>
-                        <p class="project-short">Bio-inspired sparse recurrent neural networks leveraging
-                            high-dimensional
-                            dynamics for temporal and spatial processing. <a href="#" class="read-more"
-                                onclick="toggleProject(event, this)">Read more</a></p>
-                        <div class="project-full" style="display: none;">
-                            <p>Comprehensive frameworks for bio-inspired sparse recurrent neural networks. Leveraging
-                                high-dimensional representations and rich nonlinear dynamics for complex temporal and
-                                spatial data processing.</p>
-                            <p class="project-meta-full">2 Publications, 2 Drafts</p>
-                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-expanded="false">
-                    <div class="project-image">
-                        <img src="slide/Neuro-like Temporal Learning Systems.png" alt="Temporal Learning Systems">
-                    </div>
-                    <div class="project-content">
-                        <h3>Neuro-like Temporal Learning Systems</h3>
-                        <p class="project-meta" style="display: none;">1 Draft • Collaboration with KTH</p>
-                        <p class="project-short">BCPNN-based attractor networks for rare-event learning in temporal data
-                            streams with modular hypercolumn architecture. <a href="#" class="read-more"
-                                onclick="toggleProject(event, this)">Read more</a></p>
-                        <div class="project-full" style="display: none;">
-                            <p>BCPNN-based attractor networks with modular hypercolumn architecture for rare-event
-                                learning
-                                in realistic temporal data streams. Implements learning-replay pipelines with
-                                epsilon-bounded probability learning.</p>
-                            <p class="project-meta-full">1 Draft • Collaboration with KTH</p>
-                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
-                        </div>
+                        <h3>Water-Soluble Molecular Catalyst Design</h3>
+                        <p class="project-short">Developing TEG-functionalized Ni-NHC systems with tunable solubility and electrochemical behavior.</p>
                     </div>
                 </div>
             </div>
@@ -1281,152 +1188,67 @@
             <span class="section-label">Publications</span>
             <h2>Selected Works</h2>
 
-            <!-- Category Filter Tabs -->
             <div class="pub-filters">
                 <button class="pub-filter-btn active" onclick="filterPublications('all')">All</button>
-                <button class="pub-filter-btn" onclick="filterPublications('under-review')">Under Review</button>
                 <button class="pub-filter-btn" onclick="filterPublications('journal')">Journal Articles</button>
-                <button class="pub-filter-btn" onclick="filterPublications('conference')">Conference Papers</button>
-                <button class="pub-filter-btn" onclick="filterPublications('review')">Reviews</button>
+                <button class="pub-filter-btn" onclick="filterPublications('under-review')">Under Review</button>
             </div>
 
-            <!--
-                PUBLICATION TOGGLE INSTRUCTIONS:
-                To hide a publication, change data-show="true" to data-show="false"
-                To show a publication, change data-show="false" to data-show="true"
-                Example: <div class="pub-item" data-show="false"> will hide that publication
-            -->
             <div class="pub-list">
-                <!-- Publications listed from newest to oldest -->
-
-                <!-- 2026 Under Review -->
-                <div class="pub-item" data-show="true" data-category="under-review">
-                    <p class="pub-type">Under Review</p>
-                    <p class="pub-title">SyncMapV2: Robust and Adaptive Unsupervised Segmentation</p>
-                    <p class="pub-authors">Heng Zhang, Zikang Wan, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">IEEE Trans. Pattern Analysis and Machine Intelligence, 2026</p>
-                </div>
-                <div class="pub-item" data-show="true" data-category="under-review">
-                    <p class="pub-type">Under Review</p>
-                    <p class="pub-title">RECAP: Local Hebbian Prototype Learning as a Self-Organizing Readout for
-                        Reservoir Dynamics</p>
-                    <p class="pub-authors">Heng Zhang</p>
-                    <p class="pub-venue">Neurocomputing, 2026</p>
-                </div>
-
-
-                <!-- 2025 Under Review -->
-                <div class="pub-item" data-show="true" data-category="under-review">
-                    <p class="pub-type">Under Review</p>
-                    <p class="pub-title">Self-Organizing to Learn Dynamical Hierarchies</p>
-                    <p class="pub-authors">Danilo Vasconcellos Vargas, Tham Yik Foong, Heng Zhang</p>
-                    <p class="pub-venue">Scientific Reports, 2025</p>
-                </div>
-                <div class="pub-item" data-show="true" data-category="under-review">
-                    <p class="pub-type">Under Review</p>
-                    <p class="pub-title">Adapting to Covariate Shift in Real-time by Encoding Trees with Motion
-                        Equations</p>
-                    <p class="pub-authors">Tham Yik Foong, Heng Zhang, Mao Po Yuan, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">In Submission, 2025</p>
-                </div>
-
-                <!-- 2023 Journal Articles -->
                 <div class="pub-item" data-show="true" data-category="journal">
                     <p class="pub-type">Journal Article</p>
-                    <p class="pub-title">Symmetrical SyncMap for imbalanced general chunking problems</p>
-                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">Physica D: Nonlinear Phenomena (Top 6%/9% in Mathematics/Nonlinear Dynamics),
-                        IF: 3.7, 2023</p>
+                    <p class="pub-title">Mechanism of Ni-NHC CO2 Reduction Catalysis Predominantly Affording Formate via Attack of Metal Hydride to CO2</p>
+                    <p class="pub-authors">C. Liao</p>
+                    <p class="pub-venue">ACS Catalysis, 2024, 14, 11131-11137</p>
                     <div class="pub-links">
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0167278923002774"
-                            target="_blank">Paper Link</a>
+                        <a href="https://pubs.acs.org/doi/10.1021/acscatal.4c02818" target="_blank">Paper Link</a>
                     </div>
                 </div>
                 <div class="pub-item" data-show="true" data-category="journal">
                     <p class="pub-type">Journal Article</p>
-                    <p class="pub-title">Magnum: Tackling high-dimensional structures with self-organization</p>
-                    <p class="pub-authors">Mao Po Yuan, Yikfoong Tham, Heng Zhang, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">Neurocomputing (Top 4%/7% in Cognitive Neuroscience/Computer Science), IF: 5.7,
-                        2023</p>
-                    <div class="pub-links">
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0925231223006318"
-                            target="_blank">Paper Link</a>
-                    </div>
+                    <p class="pub-title">A Planar-Structured Dinuclear Cobalt(II) Complex with Indirect Synergy for Photocatalytic CO2-to-CO Conversion</p>
+                    <p class="pub-authors">Chen Liao et al.</p>
+                    <p class="pub-venue">Angewandte Chemie International Edition, 2024, e202217807</p>
                 </div>
-                <div class="pub-item" data-show="true" data-category="review">
-                    <p class="pub-type">Review Article</p>
-                    <p class="pub-title">A survey on reservoir computing and its interdisciplinary applications beyond
-                        traditional machine learning</p>
-                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">IEEE Access (Top 8% in General Engineering), IF: 3.5, 2023 — 60+ citations </p>
-                    <div class="pub-links">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/10196105/" target="_blank">Paper Link</a>
-                    </div>
-                </div>
-
-                <!-- 2022 Conference -->
-                <div class="pub-item" data-show="true" data-category="conference">
-                    <p class="pub-type">Conference</p>
-                    <p class="pub-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A
-                        Space-time Analysis</p>
-                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">5th Artificial Intelligence and Cloud Computing Conference (AICCC), Osaka, 2022
-                    </p>
-                    <div class="pub-links">
-                        <a href="https://dl.acm.org/doi/abs/10.1145/3582099.3582102" target="_blank">Paper Link</a>
-                    </div>
-                </div>
-
-                <!-- 2020 Conference -->
-                <div class="pub-item" data-show="true" data-category="conference">
-                    <p class="pub-type">Conference</p>
-                    <p class="pub-title">Comparison of Disturbance Rejection Performance between Three Types of UAV
-                        Linear Controllers</p>
-                    <p class="pub-authors">Chao Huang, Heng Zhang</p>
-                    <p class="pub-venue">2020 7th International Conference on Information Science and Control
-                        Engineering (ICISCE), IEEE, 2020</p>
-                    <div class="pub-links">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/9532379/" target="_blank">Paper Link</a>
-                    </div>
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">Redox Tuning by Ion Pairing Controls Formate Selectivity in CO2 Reduction with TEG-Tethered Ni-NHC Complexes</p>
+                    <p class="pub-authors">Chen Liao et al.</p>
+                    <p class="pub-venue">To be submitted</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Career Section -->
+    <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <span class="section-label">Career</span>
-            <h2>Professional Experience</h2>
+            <span class="section-label">Experience</span>
+            <h2>Research Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="timeline-date">April 2025 — Present</span>
-                    <h3 class="timeline-title">Postdoctoral Researcher</h3>
-                    <p class="timeline-org">University of Tokyo — IRCN</p>
-                    <p class="timeline-desc">Collaborative initiative with KTH Royal Institute of Technology.
-                        Computational modeling of brain functions including prediction and complex sequence processing
-                        for bio-inspired AI.</p>
+                    <span class="timeline-date">Jun 2024 — Nov 2025</span>
+                    <h3 class="timeline-title">Developing Water-Soluble Ni-NHC Molecular Catalysts</h3>
+                    <p class="timeline-org">Kyushu University, Fukuoka</p>
+                    <p class="timeline-desc">Designed a new Ni-NHC complex platform with improved solubility and redox tunability for CO2 reduction electrocatalysis.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">Oct 2024 — May 2025</span>
-                    <h3 class="timeline-title">Postdoctoral Researcher</h3>
-                    <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Developing robust and adaptive machine learning models. Building
-                        bio-inspired AI systems resistant to adversarial attacks and noise corruptions.</p>
+                    <span class="timeline-date">Apr 2022 — Mar 2024</span>
+                    <h3 class="timeline-title">DFT Mechanistic Study of Selective CO2 Reduction to HCOOH</h3>
+                    <p class="timeline-org">Kyushu University, Fukuoka</p>
+                    <p class="timeline-desc">Provided a mechanistic explanation for formate-selective reduction via metal hydride attack in Ni-NHC frameworks.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">May 2024 — Present</span>
-                    <h3 class="timeline-title">System Engineer</h3>
-                    <p class="timeline-org">MiraiX.org</p>
-                    <p class="timeline-desc">3D open-world game development, machine learning engineering, and UI/UX
-                        design.</p>
+                    <span class="timeline-date">Feb 2020 — Sep 2020</span>
+                    <h3 class="timeline-title">Computational Analysis of DESI Parameter Optimization</h3>
+                    <p class="timeline-org">University of Manchester, UK</p>
+                    <p class="timeline-desc">Applied ab initio computational methods to examine solvent effects on ionization efficiency in DESI experiments.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">July 2022 — Sept 2024</span>
-                    <h3 class="timeline-title">Research Assistant</h3>
-                    <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Research assistant for projects in mathematics and information engineering.
-                        Lab assistant for stem cell culturing.</p>
+                    <span class="timeline-date">Oct 2018 — May 2019</span>
+                    <h3 class="timeline-title">MOF Synthesis for Carbon Capture</h3>
+                    <p class="timeline-org">South China Normal University, Guangzhou</p>
+                    <p class="timeline-desc">Synthesized MOF materials aimed at carbon capture applications.</p>
                 </div>
             </div>
         </div>
@@ -1439,125 +1261,99 @@
             <h2>Academic Background</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="timeline-date">Oct 2021 — Sept 2024</span>
-                    <h3 class="timeline-title">Ph.D. in Artificial Intelligence & Information Science</h3>
-                    <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Thesis: "Adaptive and Robust Learning with Self-Organizing and Nonlinear
-                        Dynamics." Full-funded by SPRING program from JST.</p>
+                    <span class="timeline-date">Apr 2022 — Mar 2026</span>
+                    <h3 class="timeline-title">Ph.D. Student, Coordination Chemistry (Inorganic)</h3>
+                    <p class="timeline-org">Kyushu University, Japan</p>
+                    <p class="timeline-desc">Research field: Molecular catalysis.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">Sept 2019 — Dec 2020</span>
-                    <h3 class="timeline-title">MSc. Communications & Signal Processing</h3>
-                    <p class="timeline-org">University of Manchester</p>
-                    <p class="timeline-desc">First-Class Honours. Outstanding Distinction grade in master's thesis on
-                        human gait classification using machine learning.</p>
+                    <span class="timeline-date">Sep 2019 — Dec 2020</span>
+                    <h3 class="timeline-title">MSc Chemistry</h3>
+                    <p class="timeline-org">University of Manchester, UK</p>
+                    <p class="timeline-desc">Overall classification: Distinction. Dissertation grade: 81 (Outstanding Distinction).</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">Sept 2015 — July 2019</span>
-                    <h3 class="timeline-title">BEng. Electronic & Information Engineering</h3>
-                    <p class="timeline-org">Shenzhen University</p>
-                    <p class="timeline-desc">Top 10 GPA</p>
+                    <span class="timeline-date">Sep 2015 — Jul 2019</span>
+                    <h3 class="timeline-title">BSc Chemistry</h3>
+                    <p class="timeline-org">South China Normal University, China</p>
+                    <p class="timeline-desc">Overall average: 84/100.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Funding Section -->
+    <!-- Awards Section -->
     <section id="funding" class="funding">
         <div class="container">
-            <span class="section-label">Funding</span>
-            <h2>External Funding Contributions</h2>
+            <span class="section-label">Awards</span>
+            <h2>Scholarships &amp; Awards</h2>
             <div class="funding-list">
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
+                        <p class="funding-short">JST SPRING Fellowship • Apr 2022 — Mar 2025</p>
                         <p class="funding-read-more"><a href="#" class="read-more"
                                 onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
-                        <p class="funding-meta">Intrinsic functionalities of biological networks with multi-reservoir
-                            systems</p>
-                        <p class="funding-amount">¥800,000 • Co-Investigator</p>
+                        <p class="funding-grant">JST SPRING Fellowship (Japan Science and Technology Agency)</p>
+                        <p class="funding-meta">Competitive fellowship for outstanding doctoral researchers in Japan.</p>
+                        <p class="funding-amount">Approx. 8.5 million JPY total funding</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">The Telecommunications Advancement Foundation • 2025–2026</p>
+                        <p class="funding-short">Oral Presentation Award • CSJ 105th Annual Meeting • Mar 2025</p>
                         <p class="funding-read-more"><a href="#" class="read-more"
                                 onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">The Telecommunications Advancement Foundation • 2025–2026</p>
-                        <p class="funding-meta">Improving AI security by developing unsupervised, robust, and adaptive
-                            AI systems</p>
-                        <p class="funding-amount">¥2,105,000 • Co-Investigator</p>
+                        <p class="funding-grant">Oral Presentation Award</p>
+                        <p class="funding-meta">Awarded at the 105th Annual Meeting of the Chemical Society of Japan, Osaka.</p>
+                        <p class="funding-amount">National conference recognition</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) •
-                            2022–2026</p>
+                        <p class="funding-short">Poster Prize • 74th JSCC Conference • Sep 2024</p>
                         <p class="funding-read-more"><a href="#" class="read-more"
                                 onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) •
-                            2022–2026</p>
-                        <p class="funding-meta">Creation of photonic computing utilizing the ultimate performance of
-                            light</p>
-                        <p class="funding-amount">¥20,000,000 • Research Collaborator</p>
+                        <p class="funding-grant">Poster Prize</p>
+                        <p class="funding-meta">Awarded at the 74th Japan Society of Coordination Chemistry Conference, Nagoya.</p>
+                        <p class="funding-amount">Top poster recognition</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">Leading Company • 2023–2025</p>
+                        <p class="funding-short">Best Proposal • Department of Chemistry, Kyushu University • Dec 2023</p>
                         <p class="funding-read-more"><a href="#" class="read-more"
                                 onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">Leading Company • 2023–2025</p>
-                        <p class="funding-meta">Small anomaly detection algorithm for autonomous driving based on
-                            Inpainting</p>
-                        <p class="funding-amount">¥15,000,000 • Research Collaborator</p>
+                        <p class="funding-grant">Best Proposal Award</p>
+                        <p class="funding-meta">Selected among Ph.D. students in the Department of Chemistry at Kyushu University.</p>
+                        <p class="funding-amount">Departmental award</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023
-                        </p>
+                        <p class="funding-short">Distinction in Master's Degree • University of Manchester • Dec 2020</p>
                         <p class="funding-read-more"><a href="#" class="read-more"
                                 onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023
-                        </p>
-                        <p class="funding-meta">Learning based on Self-Organization - Pioneering a Novel Foundation for
-                            AI</p>
-                        <p class="funding-amount">¥5,000,000 • Major Research Collaborator</p>
-                        <p class="funding-read-more"><a href="#" class="read-less"
-                                onclick="toggleFunding(event, this)">Show less</a></p>
-                    </div>
-                </div>
-                <div class="funding-item" data-expanded="false">
-                    <div class="funding-collapsed">
-                        <p class="funding-short">Japan Science and Technology Agency (JST) • 2021–2024</p>
-                        <p class="funding-read-more"><a href="#" class="read-more"
-                                onclick="toggleFunding(event, this)">Read more</a></p>
-                    </div>
-                    <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">Japan Science and Technology Agency (JST) • 2021–2024</p>
-                        <p class="funding-meta">Support for Pioneering Research Initiated by the Next Generation
-                            (SPRING)</p>
-                        <p class="funding-amount">¥8,500,000 • Highly-selected Student</p>
+                        <p class="funding-grant">Master's Degree Distinction</p>
+                        <p class="funding-meta">Outstanding Distinction in master's thesis and overall program classification.</p>
+                        <p class="funding-amount">Academic distinction</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
@@ -1569,7 +1365,7 @@
     <!-- More Section -->
     <section id="more" class="more">
         <div class="container">
-            <div class="section-header collapsed" onclick="toggleSection('more')">
+            <div class="section-header" onclick="toggleSection('more')">
                 <div class="section-title-wrapper">
                     <span class="section-label">More</span>
                     <h2>Additional Information</h2>
@@ -1580,64 +1376,50 @@
                 </div>
             </div>
 
-            <div class="section-content collapsed">
+            <div class="section-content">
                 <div class="more-grid">
                     <div class="more-top-row">
                         <div class="more-category">
                             <h3>Languages</h3>
                             <ul>
-                                <li>English - Highly proficient</li>
                                 <li>Chinese - Native</li>
-                                <li>Cantonese - Native</li>
-                                <li>Japanese - Limited Conversational</li>
+                                <li>English - IELTS certified</li>
+                                <li>Japanese - Working proficiency</li>
                             </ul>
                         </div>
 
                         <div class="more-category">
-                            <h3>Teaching Experience</h3>
+                            <h3>Technical Skills</h3>
                             <ul>
-                                <li><strong>Teaching Assistant</strong><br>
-                                    Prompt Engineering, Kyushu University<br>
-                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2024 - Sept
-                                        2024</span>
-                                </li>
-                                <li><strong>Lecturer</strong><br>
-                                    Education Career Planning, New Oriental Education & Technology Group<br>
-                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2022 - Sept
-                                        2022</span>
-                                </li>
+                                <li>DFT Calculations</li>
+                                <li>Electrochemistry</li>
+                                <li>Organic Synthesis</li>
+                                <li>Data Analysis</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="more-category">
-                        <h3>Presentations</h3>
+                        <h3>Selected Presentations</h3>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Bio-inspired Hybrid Predictive Model for Robust Visual Scene
-                                Understanding</div>
-                            <div class="presentation-meta">Oral Presentation • IRCN Retreat, Odawara, Japan • October
-                                23, 2025</div>
+                            <div class="presentation-title">Electrocatalytic CO2 Reduction by a Redox-Tunable Ni-NHC Complex Featuring Triethylene Glycol Substituents</div>
+                            <div class="presentation-meta">Oral Presentation • 10th Asian Conference on Coordination Chemistry, Hanoi • Oct 2025</div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Introduction to Robust and Adaptive AI Paradigm</div>
-                            <div class="presentation-meta">Oral Presentation • AI Incubator Salon Talk, IRCN, The
-                                University of Tokyo, Japan • October 18, 2025</div>
+                            <div class="presentation-title">Electrochemical Properties of a New Water-Soluble Ni-NHC Complex Tethered to Triethylene Glycol Moieties</div>
+                            <div class="presentation-meta">Oral Presentation • 105th CSJ Annual Meeting, Osaka • Mar 2025</div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Spatial Relativity - Robust AI for Approximate Computing
-                            </div>
-                            <div class="presentation-meta">Poster Presentation • Second Open Symposium on Photonic
-                                Computing, NICT, Koganei, Japan • December 17, 2024</div>
+                            <div class="presentation-title">Theoretical Insights into Selective Formate Formation by Ni-NHC Catalysts via Nucleophilic Attack of Metal Hydride on CO2</div>
+                            <div class="presentation-meta">Poster Presentation • 74th JSCC Conference, Gifu • Sep 2024</div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Understanding SyncMap's Dynamics and Its Self-organization
-                                Properties: A Space-time Analysis</div>
-                            <div class="presentation-meta">Oral Presentation • 5th Artificial Intelligence and Cloud
-                                Computing Conference, Osaka, Japan • December 17, 2022</div>
+                            <div class="presentation-title">Mechanistic Studies on CO2 Reduction to Formate by Ni-NHC Catalysts</div>
+                            <div class="presentation-meta">Oral Presentation • 103rd CSJ Annual Meeting, Tokyo • Mar 2023</div>
                         </div>
                     </div>
                 </div>
@@ -1654,37 +1436,29 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <span class="contact-item-label">Location</span>
-                        International Research Center for Neurointelligence (IRCN)<br>
-                        The University of Tokyo<br>
-                        7-3-1 Hongo, Bunkyo-ku, Tokyo, Japan 113-0033
+                        Fukuoka, Japan
                     </div>
                     <div class="contact-item">
                         <span class="contact-item-label">Email</span>
-                        rogerzhangheng [at] gmail [dot] com
+                        ccliaochen [at] gmail.com<br>
+                        liao.chen.896 [at] s.kyushu-u.ac.jp
                     </div>
-                    <!--                    <div class="contact-item">-->
-                    <!--                        <span class="contact-item-label">Phone</span>-->
-                    <!--                        (+81)090-2341-7951-->
-                    <!--                    </div>-->
+                    <div class="contact-item">
+                        <span class="contact-item-label">Phone</span>
+                        +81 8094156275
+                    </div>
                 </div>
                 <div class="map-container">
-                    <!--                    <iframe-->
-                    <!--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9282167891844!2d139.76183207589758!3d35.70996247257882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313ba95!2sUniversity%20of%20Tokyo!5e0!3m2!1sen!2sjp!4v1705000000000!5m2!1sen!2sjp"-->
-                    <!--                        allowfullscreen=""-->
-                    <!--                        loading="lazy"-->
-                    <!--                        referrerpolicy="no-referrer-when-downgrade">-->
-                    <!--                    </iframe>-->
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.670348133987!2d139.75920227649402!3d35.709728972577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ad96a6241%3A0x34fe6ab8a94a4aba!2sIRCN!5e0!3m2!1sen!2sjp!4v1768922743233!5m2!1sen!2sjp"
+                    <iframe src="https://maps.google.com/maps?q=Kyushu%20University%20Fukuoka&amp;output=embed"
                         width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
                 <div class="contact-socials">
-                    <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
-                    <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
-                        target="_blank">Google Scholar</a>
+                    <span>Email: ccliaochen [at] gmail.com</span>
+                    <a href="https://scholar.google.com/citations?hl=en&user=lQei3DMAAAAJ" target="_blank">Google Scholar</a>
+                    <a href="https://www.linkedin.com/in/chen-liao-b572a6339/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/cc-622" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1693,7 +1467,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Heng Zhang. All rights reserved.</p>
+            <p>© 2026 Chen Liao. All rights reserved.</p>
         </div>
     </footer>
 
