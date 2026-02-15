@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-style="style_2">
 
 <head>
     <meta charset="UTF-8">
@@ -13,13 +13,6 @@
     <style>
         /* ===== CSS Variables ===== */
         :root {
-            --color-bg: #faf9f7;
-            --color-bg-alt: #f0efeb;
-            --color-text: #1a1a1a;
-            --color-text-muted: #5a5a5a;
-            --color-accent: #2d5a7b;
-            --color-accent-light: #e8f0f5;
-            --color-border: #e0ddd8;
             --font-display: 'Instrument Serif', Georgia, serif;
             --font-body: 'Source Sans 3', -apple-system, sans-serif;
             --max-width: 1100px;
@@ -28,6 +21,38 @@
             --space-md: 2rem;
             --space-lg: 4rem;
             --space-xl: 6rem;
+        }
+
+        /* Color pack: style_1 (current default) */
+        html[data-style="style_1"] {
+            --color-bg: #faf9f7;
+            --color-bg-alt: #f0efeb;
+            --color-text: #1a1a1a;
+            --color-text-muted: #5a5a5a;
+            --color-accent: #2d5a7b;
+            --color-accent-light: #e8f0f5;
+            --color-border: #e0ddd8;
+            --color-primary: #2d5a7b;
+            --color-header-overlay: rgba(250, 249, 247, 0.9);
+            --sakura-petal-1: #f7dce5;
+            --sakura-petal-2: #efc5d3;
+            --sakura-shadow: rgba(180, 120, 145, 0.16);
+        }
+
+        /* Color pack: style_2 (slight purple tint) */
+        html[data-style="style_2"] {
+            --color-bg: #f2eff7;
+            --color-bg-alt: #faf9fc;
+            --color-text: #1d1a24;
+            --color-text-muted: #625b6e;
+            --color-accent: #655b87;
+            --color-accent-light: #ece8f6;
+            --color-border: #e3dfee;
+            --color-primary: #655b87;
+            --color-header-overlay: rgba(250, 249, 252, 0.9);
+            --sakura-petal-1: #eddff5;
+            --sakura-petal-2: #ddc8ec;
+            --sakura-shadow: rgba(124, 95, 155, 0.16);
         }
 
         /* ===== Reset & Base ===== */
@@ -52,6 +77,131 @@
             color: var(--color-text);
             background: var(--color-bg);
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== Sakura Background ===== */
+        .sakura-layer {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .sakura-leaf {
+            position: absolute;
+            top: -12vh;
+            left: 0;
+            width: 14px;
+            height: 11px;
+            border-radius: 70% 30% 65% 35%;
+            background: linear-gradient(135deg, var(--sakura-petal-1), var(--sakura-petal-2));
+            box-shadow: inset -1px -1px 0 var(--sakura-shadow);
+            opacity: 0.24;
+            animation: sakura-fall var(--fall-duration) linear infinite;
+            animation-delay: var(--fall-delay);
+            transform: translate3d(0, -12vh, 0) rotate(0deg);
+        }
+
+        @keyframes sakura-fall {
+            0% {
+                transform: translate3d(0, -12vh, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate3d(var(--fall-drift), 110vh, 0) rotate(560deg);
+            }
+        }
+
+        .sakura-leaf:nth-child(1) {
+            left: 6%;
+            --fall-duration: 14s;
+            --fall-delay: -2s;
+            --fall-drift: 10vw;
+        }
+
+        .sakura-leaf:nth-child(2) {
+            left: 14%;
+            --fall-duration: 17s;
+            --fall-delay: -8s;
+            --fall-drift: -8vw;
+        }
+
+        .sakura-leaf:nth-child(3) {
+            left: 22%;
+            --fall-duration: 16s;
+            --fall-delay: -5s;
+            --fall-drift: 11vw;
+        }
+
+        .sakura-leaf:nth-child(4) {
+            left: 31%;
+            --fall-duration: 19s;
+            --fall-delay: -11s;
+            --fall-drift: -7vw;
+        }
+
+        .sakura-leaf:nth-child(5) {
+            left: 40%;
+            --fall-duration: 15s;
+            --fall-delay: -4s;
+            --fall-drift: 9vw;
+        }
+
+        .sakura-leaf:nth-child(6) {
+            left: 49%;
+            --fall-duration: 18s;
+            --fall-delay: -10s;
+            --fall-drift: -9vw;
+        }
+
+        .sakura-leaf:nth-child(7) {
+            left: 58%;
+            --fall-duration: 20s;
+            --fall-delay: -6s;
+            --fall-drift: 12vw;
+        }
+
+        .sakura-leaf:nth-child(8) {
+            left: 67%;
+            --fall-duration: 16s;
+            --fall-delay: -12s;
+            --fall-drift: -10vw;
+        }
+
+        .sakura-leaf:nth-child(9) {
+            left: 75%;
+            --fall-duration: 14s;
+            --fall-delay: -7s;
+            --fall-drift: 8vw;
+        }
+
+        .sakura-leaf:nth-child(10) {
+            left: 83%;
+            --fall-duration: 19s;
+            --fall-delay: -9s;
+            --fall-drift: -8vw;
+        }
+
+        .sakura-leaf:nth-child(11) {
+            left: 90%;
+            --fall-duration: 17s;
+            --fall-delay: -3s;
+            --fall-drift: 10vw;
+        }
+
+        .sakura-leaf:nth-child(12) {
+            left: 96%;
+            --fall-duration: 15s;
+            --fall-delay: -13s;
+            --fall-drift: -6vw;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sakura-leaf {
+                animation: none;
+                opacity: 0.2;
+            }
         }
 
         img {
@@ -189,7 +339,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(250, 249, 247, 0.9);
+            background: var(--color-header-overlay);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--color-border);
         }
@@ -1047,6 +1197,21 @@
 </head>
 
 <body>
+    <div class="sakura-layer" aria-hidden="true">
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+        <span class="sakura-leaf"></span>
+    </div>
+
     <!-- Header -->
     <header>
         <nav class="container">
@@ -1095,7 +1260,8 @@
                     </p>
                     <div class="hero-links">
                         <span>Email: ccliaochen [at] gmail.com</span>
-                        <a href="https://scholar.google.com/citations?hl=en&user=lQei3DMAAAAJ" target="_blank">Google Scholar</a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=lQei3DMAAAAJ" target="_blank">Google
+                            Scholar</a>
                         <a href="https://www.linkedin.com/in/chen-liao-b572a6339/" target="_blank">LinkedIn</a>
                         <a href="https://github.com/cc-622" target="_blank">GitHub</a>
                     </div>
@@ -1163,19 +1329,22 @@
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Ni-NHC Catalysis for Selective Formate Production</h3>
-                        <p class="project-short">Mechanistic and design studies on Ni-NHC complexes to improve CO2-to-formate selectivity.</p>
+                        <p class="project-short">Mechanistic and design studies on Ni-NHC complexes to improve
+                            CO2-to-formate selectivity.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Redox Tuning Through Ion Pairing</h3>
-                        <p class="project-short">Investigating ion-pair effects to control catalytic pathways in electrocatalytic CO2 reduction.</p>
+                        <p class="project-short">Investigating ion-pair effects to control catalytic pathways in
+                            electrocatalytic CO2 reduction.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Water-Soluble Molecular Catalyst Design</h3>
-                        <p class="project-short">Developing TEG-functionalized Ni-NHC systems with tunable solubility and electrochemical behavior.</p>
+                        <p class="project-short">Developing TEG-functionalized Ni-NHC systems with tunable solubility
+                            and electrochemical behavior.</p>
                     </div>
                 </div>
             </div>
@@ -1197,7 +1366,8 @@
             <div class="pub-list">
                 <div class="pub-item" data-show="true" data-category="journal">
                     <p class="pub-type">Journal Article</p>
-                    <p class="pub-title">Mechanism of Ni-NHC CO2 Reduction Catalysis Predominantly Affording Formate via Attack of Metal Hydride to CO2</p>
+                    <p class="pub-title">Mechanism of Ni-NHC CO2 Reduction Catalysis Predominantly Affording Formate via
+                        Attack of Metal Hydride to CO2</p>
                     <p class="pub-authors">C. Liao</p>
                     <p class="pub-venue">ACS Catalysis, 2024, 14, 11131-11137</p>
                     <div class="pub-links">
@@ -1206,13 +1376,15 @@
                 </div>
                 <div class="pub-item" data-show="true" data-category="journal">
                     <p class="pub-type">Journal Article</p>
-                    <p class="pub-title">A Planar-Structured Dinuclear Cobalt(II) Complex with Indirect Synergy for Photocatalytic CO2-to-CO Conversion</p>
+                    <p class="pub-title">A Planar-Structured Dinuclear Cobalt(II) Complex with Indirect Synergy for
+                        Photocatalytic CO2-to-CO Conversion</p>
                     <p class="pub-authors">Chen Liao et al.</p>
                     <p class="pub-venue">Angewandte Chemie International Edition, 2024, e202217807</p>
                 </div>
                 <div class="pub-item" data-show="true" data-category="under-review">
                     <p class="pub-type">Under Review</p>
-                    <p class="pub-title">Redox Tuning by Ion Pairing Controls Formate Selectivity in CO2 Reduction with TEG-Tethered Ni-NHC Complexes</p>
+                    <p class="pub-title">Redox Tuning by Ion Pairing Controls Formate Selectivity in CO2 Reduction with
+                        TEG-Tethered Ni-NHC Complexes</p>
                     <p class="pub-authors">Chen Liao et al.</p>
                     <p class="pub-venue">To be submitted</p>
                 </div>
@@ -1230,19 +1402,22 @@
                     <span class="timeline-date">Jun 2024 — Nov 2025</span>
                     <h3 class="timeline-title">Developing Water-Soluble Ni-NHC Molecular Catalysts</h3>
                     <p class="timeline-org">Kyushu University, Fukuoka</p>
-                    <p class="timeline-desc">Designed a new Ni-NHC complex platform with improved solubility and redox tunability for CO2 reduction electrocatalysis.</p>
+                    <p class="timeline-desc">Designed a new Ni-NHC complex platform with improved solubility and redox
+                        tunability for CO2 reduction electrocatalysis.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Apr 2022 — Mar 2024</span>
                     <h3 class="timeline-title">DFT Mechanistic Study of Selective CO2 Reduction to HCOOH</h3>
                     <p class="timeline-org">Kyushu University, Fukuoka</p>
-                    <p class="timeline-desc">Provided a mechanistic explanation for formate-selective reduction via metal hydride attack in Ni-NHC frameworks.</p>
+                    <p class="timeline-desc">Provided a mechanistic explanation for formate-selective reduction via
+                        metal hydride attack in Ni-NHC frameworks.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Feb 2020 — Sep 2020</span>
                     <h3 class="timeline-title">Computational Analysis of DESI Parameter Optimization</h3>
                     <p class="timeline-org">University of Manchester, UK</p>
-                    <p class="timeline-desc">Applied ab initio computational methods to examine solvent effects on ionization efficiency in DESI experiments.</p>
+                    <p class="timeline-desc">Applied ab initio computational methods to examine solvent effects on
+                        ionization efficiency in DESI experiments.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Oct 2018 — May 2019</span>
@@ -1270,7 +1445,8 @@
                     <span class="timeline-date">Sep 2019 — Dec 2020</span>
                     <h3 class="timeline-title">MSc Chemistry</h3>
                     <p class="timeline-org">University of Manchester, UK</p>
-                    <p class="timeline-desc">Overall classification: Distinction. Dissertation grade: 81 (Outstanding Distinction).</p>
+                    <p class="timeline-desc">Overall classification: Distinction. Dissertation grade: 81 (Outstanding
+                        Distinction).</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Sep 2015 — Jul 2019</span>
@@ -1296,7 +1472,8 @@
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">JST SPRING Fellowship (Japan Science and Technology Agency)</p>
-                        <p class="funding-meta">Competitive fellowship for outstanding doctoral researchers in Japan.</p>
+                        <p class="funding-meta">Competitive fellowship for outstanding doctoral researchers in Japan.
+                        </p>
                         <p class="funding-amount">Approx. 8.5 million JPY total funding</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
@@ -1310,7 +1487,8 @@
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">Oral Presentation Award</p>
-                        <p class="funding-meta">Awarded at the 105th Annual Meeting of the Chemical Society of Japan, Osaka.</p>
+                        <p class="funding-meta">Awarded at the 105th Annual Meeting of the Chemical Society of Japan,
+                            Osaka.</p>
                         <p class="funding-amount">National conference recognition</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
@@ -1324,7 +1502,8 @@
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">Poster Prize</p>
-                        <p class="funding-meta">Awarded at the 74th Japan Society of Coordination Chemistry Conference, Nagoya.</p>
+                        <p class="funding-meta">Awarded at the 74th Japan Society of Coordination Chemistry Conference,
+                            Nagoya.</p>
                         <p class="funding-amount">Top poster recognition</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
@@ -1332,13 +1511,15 @@
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">Best Proposal • Department of Chemistry, Kyushu University • Dec 2023</p>
+                        <p class="funding-short">Best Proposal • Department of Chemistry, Kyushu University • Dec 2023
+                        </p>
                         <p class="funding-read-more"><a href="#" class="read-more"
                                 onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">Best Proposal Award</p>
-                        <p class="funding-meta">Selected among Ph.D. students in the Department of Chemistry at Kyushu University.</p>
+                        <p class="funding-meta">Selected among Ph.D. students in the Department of Chemistry at Kyushu
+                            University.</p>
                         <p class="funding-amount">Departmental award</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
@@ -1346,13 +1527,15 @@
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">Distinction in Master's Degree • University of Manchester • Dec 2020</p>
+                        <p class="funding-short">Distinction in Master's Degree • University of Manchester • Dec 2020
+                        </p>
                         <p class="funding-read-more"><a href="#" class="read-more"
                                 onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">Master's Degree Distinction</p>
-                        <p class="funding-meta">Outstanding Distinction in master's thesis and overall program classification.</p>
+                        <p class="funding-meta">Outstanding Distinction in master's thesis and overall program
+                            classification.</p>
                         <p class="funding-amount">Academic distinction</p>
                         <p class="funding-read-more"><a href="#" class="read-less"
                                 onclick="toggleFunding(event, this)">Show less</a></p>
@@ -1403,23 +1586,31 @@
                         <h3>Selected Presentations</h3>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Electrocatalytic CO2 Reduction by a Redox-Tunable Ni-NHC Complex Featuring Triethylene Glycol Substituents</div>
-                            <div class="presentation-meta">Oral Presentation • 10th Asian Conference on Coordination Chemistry, Hanoi • Oct 2025</div>
+                            <div class="presentation-title">Electrocatalytic CO2 Reduction by a Redox-Tunable Ni-NHC
+                                Complex Featuring Triethylene Glycol Substituents</div>
+                            <div class="presentation-meta">Oral Presentation • 10th Asian Conference on Coordination
+                                Chemistry, Hanoi • Oct 2025</div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Electrochemical Properties of a New Water-Soluble Ni-NHC Complex Tethered to Triethylene Glycol Moieties</div>
-                            <div class="presentation-meta">Oral Presentation • 105th CSJ Annual Meeting, Osaka • Mar 2025</div>
+                            <div class="presentation-title">Electrochemical Properties of a New Water-Soluble Ni-NHC
+                                Complex Tethered to Triethylene Glycol Moieties</div>
+                            <div class="presentation-meta">Oral Presentation • 105th CSJ Annual Meeting, Osaka • Mar
+                                2025</div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Theoretical Insights into Selective Formate Formation by Ni-NHC Catalysts via Nucleophilic Attack of Metal Hydride on CO2</div>
-                            <div class="presentation-meta">Poster Presentation • 74th JSCC Conference, Gifu • Sep 2024</div>
+                            <div class="presentation-title">Theoretical Insights into Selective Formate Formation by
+                                Ni-NHC Catalysts via Nucleophilic Attack of Metal Hydride on CO2</div>
+                            <div class="presentation-meta">Poster Presentation • 74th JSCC Conference, Gifu • Sep 2024
+                            </div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Mechanistic Studies on CO2 Reduction to Formate by Ni-NHC Catalysts</div>
-                            <div class="presentation-meta">Oral Presentation • 103rd CSJ Annual Meeting, Tokyo • Mar 2023</div>
+                            <div class="presentation-title">Mechanistic Studies on CO2 Reduction to Formate by Ni-NHC
+                                Catalysts</div>
+                            <div class="presentation-meta">Oral Presentation • 103rd CSJ Annual Meeting, Tokyo • Mar
+                                2023</div>
                         </div>
                     </div>
                 </div>
@@ -1456,7 +1647,8 @@
                 </div>
                 <div class="contact-socials">
                     <span>Email: ccliaochen [at] gmail.com</span>
-                    <a href="https://scholar.google.com/citations?hl=en&user=lQei3DMAAAAJ" target="_blank">Google Scholar</a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=lQei3DMAAAAJ" target="_blank">Google
+                        Scholar</a>
                     <a href="https://www.linkedin.com/in/chen-liao-b572a6339/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/cc-622" target="_blank">GitHub</a>
                 </div>
@@ -1649,6 +1841,14 @@
                 backToTop.classList.remove('visible');
             }
         });
+
+        // Call in code: setColorStyle('style_1') or setColorStyle('style_2')
+        function setColorStyle(styleName) {
+            if (styleName !== 'style_1' && styleName !== 'style_2') return;
+            document.documentElement.setAttribute('data-style', styleName);
+        }
+
+        window.setColorStyle = setColorStyle;
     </script>
 </body>
 
