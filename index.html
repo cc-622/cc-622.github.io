@@ -37,6 +37,9 @@
             --sakura-petal-1: #f7dce5;
             --sakura-petal-2: #efc5d3;
             --sakura-shadow: rgba(180, 120, 145, 0.16);
+            --stock-petal-1: #f3d1de;
+            --stock-petal-2: #e9bece;
+            --stock-shadow: rgba(137, 94, 113, 0.22);
         }
 
         /* Color pack: style_2 (slight purple tint) */
@@ -53,6 +56,9 @@
             --sakura-petal-1: #eddff5;
             --sakura-petal-2: #ddc8ec;
             --sakura-shadow: rgba(124, 95, 155, 0.16);
+            --stock-petal-1: #e6d4f3;
+            --stock-petal-2: #d7bee8;
+            --stock-shadow: rgba(108, 84, 138, 0.22);
         }
 
         /* ===== Reset & Base ===== */
@@ -342,6 +348,19 @@
             background: var(--color-header-overlay);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--color-border);
+            overflow: visible;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            height: 20px;
+            background: linear-gradient(to bottom, var(--color-header-overlay), transparent);
+            pointer-events: none;
+            z-index: 0;
         }
 
         nav {
@@ -349,6 +368,44 @@
             justify-content: space-between;
             align-items: center;
             height: 70px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .nav-petal-stock {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 34px;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .nav-petal-stock::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 14px;
+            background: linear-gradient(to bottom, transparent, var(--color-bg-alt));
+            opacity: 0.65;
+        }
+
+        .nav-petal {
+            position: absolute;
+            left: var(--stock-left, 0px);
+            bottom: var(--stock-bottom, 0px);
+            width: var(--stock-width, 20px);
+            height: var(--stock-height, 13px);
+            border-radius: 72% 28% 68% 32%;
+            background: linear-gradient(135deg, var(--stock-petal-1), var(--stock-petal-2));
+            box-shadow: inset -1px -1px 0 var(--stock-shadow), 0 2px 5px rgba(0, 0, 0, 0.06);
+            transform: rotate(var(--stock-rotate, 0deg));
+            opacity: var(--stock-opacity, 0.2);
+            z-index: var(--stock-z, 1);
         }
 
         .nav-logo {
@@ -427,6 +484,7 @@
             align-items: center;
             gap: var(--space-md);
             transition: right 0.4s ease;
+            z-index: 4;
         }
 
         .nav-mobile.active {
@@ -444,7 +502,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 70px;
+            padding-top: 84px;
             position: relative;
         }
 
@@ -1096,7 +1154,7 @@
 
         @media (max-width: 768px) {
             .hero {
-                padding-top: 100px;
+                padding-top: 114px;
             }
 
             .contact-content {
@@ -1232,6 +1290,7 @@
                 <span></span>
             </div>
         </nav>
+        <div class="nav-petal-stock" aria-hidden="true"></div>
         <div class="nav-mobile">
             <a href="#about" onclick="toggleMenu()">About</a>
             <a href="#research" onclick="toggleMenu()">Research</a>
@@ -1687,8 +1746,59 @@
             content.classList.toggle('collapsed');
         }
 
+        // Build a dense random petal stock under nav.
+        // Positions are fixed in px so petals do not scale/reflow while resizing.
+        function appendNavPetalsForRange(stock, startX, endX) {
+            const usableWidth = Math.max(0, endX - startX);
+            if (usableWidth <= 0) return;
+
+            const count = Math.floor(usableWidth / 8);
+            for (let i = 0; i < count; i++) {
+                const petal = document.createElement('span');
+                petal.className = 'nav-petal';
+
+                const width = 12 + Math.random() * 14;
+                const height = width * (0.55 + Math.random() * 0.2);
+                const left = startX + Math.random() * Math.max(1, usableWidth - width);
+                const bottom = Math.random() * 16;
+                const rotate = -35 + Math.random() * 70;
+                const opacity = 0.1 + Math.random() * 0.15;
+                const z = 1 + Math.floor(Math.random() * 4);
+
+                petal.style.setProperty('--stock-left', `${left.toFixed(1)}px`);
+                petal.style.setProperty('--stock-bottom', `${bottom.toFixed(1)}px`);
+                petal.style.setProperty('--stock-width', `${width.toFixed(1)}px`);
+                petal.style.setProperty('--stock-height', `${height.toFixed(1)}px`);
+                petal.style.setProperty('--stock-rotate', `${rotate.toFixed(1)}deg`);
+                petal.style.setProperty('--stock-opacity', opacity.toFixed(3));
+                petal.style.setProperty('--stock-z', String(z));
+                stock.appendChild(petal);
+            }
+        }
+
+        function buildNavPetalStock(forceReset = false) {
+            const stock = document.querySelector('.nav-petal-stock');
+            if (!stock) return;
+
+            const stockWidth = stock.clientWidth || window.innerWidth;
+            let generatedWidth = Number(stock.dataset.generatedWidth || 0);
+
+            if (forceReset || !generatedWidth) {
+                stock.innerHTML = '';
+                generatedWidth = 0;
+            }
+
+            if (stockWidth <= generatedWidth) return;
+
+            // Slight overlap avoids a visible seam between old and new regions.
+            const startX = Math.max(0, generatedWidth - 12);
+            appendNavPetalsForRange(stock, startX, stockWidth);
+            stock.dataset.generatedWidth = String(stockWidth);
+        }
+
         // Auto-convert all sections to collapsible on page load
         document.addEventListener('DOMContentLoaded', function () {
+            buildNavPetalStock(true);
             const sections = document.querySelectorAll('section[id]:not(#about):not(#more)');
 
             sections.forEach(section => {
@@ -1737,6 +1847,12 @@
                 container.insertBefore(header, container.firstChild);
                 container.appendChild(contentWrapper);
             });
+        });
+
+        let navPetalResizeTimer = null;
+        window.addEventListener('resize', function () {
+            clearTimeout(navPetalResizeTimer);
+            navPetalResizeTimer = setTimeout(() => buildNavPetalStock(false), 120);
         });
 
         // Smooth scroll for Safari
